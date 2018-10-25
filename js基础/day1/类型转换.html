@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //类型转换
+
+        //其他类型转数字类型： 三种方式：
+    //1.parseInt(); //转整数
+
+        // console.log(parseInt("10"));    //10
+        // console.log(parseInt("10a"));   //10  
+        // console.log(parseInt("g10"));   //NaN  
+        // console.log(parseInt("1aa0"));  //1
+        // console.log(parseInt("10.98")); //10
+        // console.log(parseInt("10.98sadasd"));   //10
+
+    //2.parseFloat(); //转小数
+        
+        // console.log(parseFloat("10"));   //10
+        // console.log(parseFloat("10aaadsada"));  //10 
+        // console.log(parseFloat("g10"));  //NaN
+        // console.log(parseFloat("1asdsad0"));  //1
+        // console.log(parseFloat("10.98"));  //10.98
+        // console.log(parseFloat("10.98asda"));  //10.98
+
+    //3.Nubmer(); //转数字
+
+        // console.log(Nubmer("10"));   //10
+        // console.log(Nubmer("10aaadsada"));  //NaN 
+        // console.log(Nubmer("g10"));  //NaN
+        // console.log(Nubmer("1asdsad0"));  //NaN
+        // console.log(Nubmer("10.98"));  //10.98
+        // console.log(Nubmer("10.98asda"));  //NaN
+
+    //总结： 想要转整数用parseInt(),想要转小数用parseFloat()
+    //想要转数字用Number()，但是要比上面两种方法严格。
+
+        //其他类型转字符串类型
+    //1.   toString() 
+
+        var num=10;
+        console.log(num.toString()); 
+
+    //2.    String()
+
+        var num1=20;
+        console.log(String(num1));
+
+    //如果变量有意义调用.toString()进行转换
+    //如果变量没有意义使用String()进行转换
+
+        // var num2;
+        // console.log(num2.toString());  
+        // var num3=null;
+        // console.log(num3.toString());
+    //会报错！！！提示未定义和空值；
+
+    //这个可以
+    
+        // var num2;
+        // console.log(String(num2)); // 字符串： undefined
+        // var num3=null;
+        // console.log(String(num3)); // 字符串： null
+
+
+        //其他类型转布尔类型
+    //1.   Boolean(值);
+
+    // console.log(Boolean(1));    //true
+    // console.log(Boolean(0));    //false
+    // console.log(Boolean(11));   //true
+    // console.log(Boolean(-11));  //true
+    // console.log(Boolean("哈哈")); //true
+    // console.log(Boolean(""));   //false
+    // console.log(Boolean(null)); //false
+    // console.log(Boolean(undefined));  //false
+    
+    // var str=10;
+    // console.log(-str);  //-10
+    
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
