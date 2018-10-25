@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var provinceArray = new Array("北京","上海","天津","重庆","河北","山西","内蒙古","辽宁","吉林","黑龙江","江苏","浙江","安徽","福建","江西","山东","河南","湖北","湖南","广东","广西","海南","四川","贵州","云南","西藏","陕西","甘肃","宁夏","青海","新疆","香港","澳门","台湾");
+		    var cityArray=new Array();
+		    cityArray[0]=new Array("东城区","西城区","朝阳区","海淀区","丰台区","石景山区","房山区","通州区","顺义区","大兴区","昌平区","平谷区","怀柔区","门头沟区","密云县","延庆县");
+		    cityArray[1]=new Array("黄浦区","卢湾区","长宁区","普陀区","虹口区","闵行区","徐汇区","闸北区","杨浦区","嘉定区","宝山区","青浦区 ","松江区","金山区","静安区 ","浦东新区","奉贤区","崇明县 ");
+		    cityArray[2]=new Array("和平区","河东区 "," 河西区","南开区 ","河北区","红桥区","塘沽区","汉沽区","大港区","东丽区 ","蓟县","西青区","津南区","武清区","宝坻区"," 静海县","宁河县","北辰区");
+		    cityArray[3]=new Array("万州","涪陵","渝中","大渡口","江北","沙坪坝","九龙坡","南岸","北碚","万盛","双挢","渝北","巴南","黔江","长寿","綦江","潼南","铜梁","大足","荣昌","壁山","梁平","城口","丰都","垫江","武隆","忠县","开县","云阳","奉节","巫山","巫溪","石柱","其他");
+            cityArray[4]=new Array("石家庄","邯郸","邢台","保定","张家口","承德","廊坊","唐山","秦皇岛","沧州","衡水");
+            cityArray[5]=new Array("太原","大同","阳泉","长治","晋城","朔州","吕梁","忻州","晋中","临汾","运城");
+            cityArray[6]=new Array("呼和浩特","包头","乌海","赤峰","呼伦贝尔盟","阿拉善盟","哲里木盟","兴安盟","乌兰察布盟","锡林郭勒盟","巴彦淖尔盟","伊克昭盟");
+            cityArray[7]=new Array("沈阳","大连","鞍山","抚顺","本溪","丹东","锦州","营口","阜新","辽阳","盘锦","铁岭","朝阳","葫芦岛");
+            cityArray[8]=new Array("长春","吉林","四平","辽源","通化","白山","松原","白城","延边");
+            cityArray[9]=new Array("哈尔滨","齐齐哈尔","牡丹江","佳木斯","大庆","绥化","鹤岗","鸡西","黑河","双鸭山","伊春","七台河","大兴安岭");
+            cityArray[10]=new Array("南京","镇江","苏州","南通","扬州","盐城","徐州","连云港","常州","无锡","宿迁","泰州","淮安");
+            cityArray[11]=new Array("杭州","宁波","温州","嘉兴","湖州","绍兴","金华","衢州","舟山","台州","丽水");
+            cityArray[12]=new Array("合肥","芜湖","蚌埠","马鞍山","淮北","铜陵","安庆","黄山","滁州","宿州","池州","淮南","巢湖","阜阳","六安","宣城","亳州");
+            cityArray[13]=new Array("福州","厦门","莆田","三明","泉州","漳州","南平","龙岩","宁德");
+            cityArray[14]=new Array("南昌","景德镇","九江","鹰潭","萍乡","新馀","赣州","吉安","宜春","抚州","上饶");
+            cityArray[15]=new Array("济南","青岛","淄博","枣庄","东营","烟台","潍坊","济宁","泰安","威海","日照","莱芜","临沂","德州","聊城","滨州","菏泽");
+
+		    function init(){
+		    	var provinceObj=document.getElementById("province");
+		    	for(var i=0;i<provinceArray.length;i++){
+		    		var optionObj=document.createElement("option");
+		    		optionObj.value=optionObj.text=provinceArray[i];
+		    		provinceObj.options.add(optionObj);
+		    	}
+		    }
+			function selectProvince(){
+				var provinceObj=document.getElementById("province");
+				var cityObj=document.getElementById("city");
+				var pSelectedIndex=provinceObj.selectedIndex-1;
+				for(var i=cityObj.length-1;i>0;i--){
+					cityObj.options.remove(i);
+				}
+				if(pSelectedIndex>=0){
+					for(var i=0;i<cityArray[pSelectedIndex].length;i++){
+						var optionObj=document.createElement("option");
+						optionObj.value=optionObj.text=cityArray[pSelectedIndex][i];
+						cityObj.options.add(optionObj);
+					}
+				}
+			}
+			function showInfo(){
+				var provinceObj=document.getElementById("province");
+				var cityObj=document.getElementById("city");
+				var pSelectedIndex=provinceObj.selectedIndex-1;
+				var newlocationObj=document.getElementById("newlocation");
+				if(pSelectedIndex<0){
+					newlocationObj.innerText="";
+				}else{
+					newlocationObj.innerText="省份："+provinceArray[pSelectedIndex];
+					var cSelectIndex=cityObj.selectedIndex-1;
+					if(cSelectIndex>=0){
+						newlocationObj.innerText+=",城市："+cityArray[pSelectedIndex][cSelectIndex];
+					}
+				}
+			}
+		</script>
+</head>
+	<body onload="init()" bgcolor="#fff" alink="#333" vlink="#333" link="#333">
+		<p>请输入您所在的国家的具体地方。此项可选</p>
+		<form>
+			省份<select onchange="selectProvince()" id="province">
+				<option value="">请选择省份</option>
+			</select>
+			城市<select onchange="showInfo()" id="city">
+				<option value="">请选择城市</option>
+			</select>
+		</form>
+		我在<span id="newlocation" style="font-weight:bold"></span>
+	</body>
+</html>
+
+

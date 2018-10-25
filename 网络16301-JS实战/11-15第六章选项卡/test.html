@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>JS选项卡</title>
+    <style type="text/css">
+        .xxk{
+            width: 600px;
+            height: 400px;
+            border: 2px #000 solid;
+            margin: 0px auto;
+        }
+        .xxk_bt{
+            width: 600px;
+            height: 30px;
+            font-size: 16px;
+        }
+        .xxk_bt li{
+            float: left;
+            display: inline;
+            line-height: 30px;
+            width: 100px;
+            height: 30px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .xxk_bt .on{
+            background: pink;
+            color: #FFF;
+        }
+        .nr{
+            text-align: left;
+            color: #000;
+            line-height: 24px;
+            height: 370px;
+
+        }
+        .xianshi{
+            display: block;
+        }
+        .yincang{
+            display: none;
+        }
+    </style>
+    <script>
+        function change(clickObj){
+            var tabObjs=document.getElementById('tabUl').children;
+            for(var i=0;i<tabObjs.length;i++){
+                if (tabObjs[i].className=="on") {
+                    tabObjs[i].className="";
+                    var currContentId=tabObjs[i].getAttribute("contentObjId");
+                    document.getElementById(currContentId).className="nr yincang";
+                }
+            }
+            clickObj.className="on";
+            var nowContentId=clickObj.getAttribute("contentObjId");
+            document.getElementById(nowContentId).className="nr xianshi";
+        }
+    </script>
+</head>
+<body>
+  <div class="xxk" id="tab1">
+    <ul class="xxk_bt" id="tabUl">
+        <li class="on" onclick="change(this)" contentObjId="neirong1"><span>MENU1</span></li>
+        <li onclick="change(this)" contentObjId="neirong2"><span>MENU2</span></li>
+        <li onclick="change(this)" contentObjId="neirong3"><span>MENU3</span></li>
+    </ul>
+    <div class="nr">
+    <div class="xianshi" id="neirong1">
+        2017年
+    </div>
+    <div class="yincang" id="neirong2">
+        11月
+    </div>
+    <div class="yincang" id="neirong3">
+        15日
+    </div>
+    </div>
+
+  </div>
+</body>
+</html>

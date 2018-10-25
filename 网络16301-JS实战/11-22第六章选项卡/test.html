@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>选项卡1</title>
+		<style>
+		*{
+            margin: 0px;
+            padding: 0px;
+        }
+        .xxk{
+            width: 330px;
+            height: 370px;
+            margin: 0px auto;
+        }
+        .xxk_bt{
+            width: 330px;
+            height: 30px;
+            font-size: 16px;
+        }
+        .xxk_bt li{
+	        float: left;
+            line-height: 30px;
+            width: 100px;
+            list-style: none;
+	        height: 30px;
+            background: pink;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .xxk_bt .on{
+            color: #fff;
+        }
+        .nr{
+            text-align: left;
+            color: #000;
+            line-height: 24px;
+            height: 370px;
+        }
+        .xianshi{
+            display: block;
+            }
+        .yincang{
+            display: none;
+        }
+		</style>
+		<script>
+			function change(clickObj){
+				var tabObjs=document.getElementById('tabUI').children;
+				for(var i=0;i<tabObjs.length;i++){
+					if(tabObjs[i].className=="on"){
+						tabObjs[i].className=="";
+						var currContenId=tabObjs[i].getAttribute("contentObjId");
+						document.getElementById(currContenId).className="nr yincang";
+						}
+				}
+				clickObj.className="on";
+				var nowContenId=clickObj.getAttribute("contentObjId");
+						document.getElementById(nowContenId).className="nr xianshi";
+			}
+            function yichu(){
+                  var tabObjs=document.getElementById('tabUI').children;
+                for(var i=0;i<tabObjs.length;i++){
+                    if(tabObjs[i].className=="on"){
+                        tabObjs[i].className=="";
+                        var currContenId=tabObjs[i].getAttribute("contentObjId");
+                        document.getElementById(currContenId).className="nr yincang";
+                        }
+                }
+            }
+		</script>
+	</head>
+	<body>
+		<div class="xxk" id="tab1">
+			<ul class="xxk_bt" id="tabUI">
+				<li class="on" onmouseover="change(this)" onmouseout="yichu()" contentObjId="neirong1"><span>MENU1</span></li>
+				<li onmouseover="change(this)" onmouseout="yichu()"  contentObjId="neirong2"><span>MENU2</span></li>
+				<li onmouseover="change(this)" onmouseout="yichu()"  contentObjId="neirong3"><span>MENU3</span></li>
+				<div class="nr yincang" id="neirong1"><br /><br />这里是内容1</div>
+				<div class="nr yincang" id="neirong2"><br /><br />这里是内容2</div>
+				<div class="nr yincang" id="neirong3"><br /><br />这里是内容3</div>
+			</ul>
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>输出四位数的个位、十位、百位、千位上的数值</title>
+<script class="text/javascript">
+function ge(){
+  m=document.getElementById("a").value;
+  a=Number(m%10);
+  a=parseInt(a);
+  alert(a);  
+}
+function shi(){
+  m=document.getElementById("a").value;
+  b=Number(m/10%10);
+  b=parseInt(b);
+  alert(b);  
+}
+function bai(){
+  m=document.getElementById("a").value;
+  c=Number(m/100%10);
+  c=parseInt(c);
+  alert(c);  
+}
+function qian(){
+  m=document.getElementById("a").value;
+  d=Number(m/1000%10);
+  d=parseInt(d);
+  alert(d);  
+}
+</script>
+</head>
+<body>
+
+请输入一个四位数：<input name="a" type="text" id="a"><br><br>
+个位上的数值为：<br><br><input name="ge" value="个位"  type="button"  onclick="ge()"><br><br>
+十位上的数值为：<br><br><input name="shi" value="十位"  type="button" onclick="shi()"><br><br>
+百位上的数值为：<br><br><input name="bai" value="百位"  type="button" onclick="bai()"><br><br>
+千位上的数值为：<br><br><input name="qian" value="千位"  type="button" onclick="qian()"><br><br>
+
+</body>
+</html>

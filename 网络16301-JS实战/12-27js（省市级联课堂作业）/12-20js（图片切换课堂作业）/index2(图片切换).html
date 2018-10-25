@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #picshow{
+            width:310px;
+            height:310px;
+            margin-left:auto;
+            margin-right:auto;
+            position:relative;
+        }
+        #picshow ul{
+            width:310px;
+            height:310px;
+            overflow:hidden;
+            position:absolute;
+            left:100px;
+            top:0px;
+        }
+        #picshow li{
+            width:310px;
+            height:310px;
+            overflow:hidden;
+        }
+        #picshow #shuzi{
+            position:absolute;
+            left:80px;
+            bottom:0px;
+            text-align:right;
+            width:300px;
+        }
+        #picshow #shuzi span{
+            padding:2px 5px;
+            border:1px #F00 solid;
+            color:#F00;
+            background:#FCF;
+            line-height:20px;
+            cursor:pointer;
+            margin-right:5px;
+        }
+        #picshow #shuzi span.on{
+            background:#3CC;
+            border:#06F solid;
+            color:#06F;
+        }
+    </style>
+    <script type="text/javascript">
+        function setNow(index){
+            for (var i=0;i<tags.length;i++){
+            tags[i].style.display="none";
+        }
+            tags[index].style.display="block";
+            for(var i=0;i<cats.length;i++){
+                cats[i].className="";
+            }
+               cats[index].className="on";
+        }
+        function setNext(){
+            current++;
+            if(current>tags.length){
+                current=0;
+            }
+                setNow(current);
+        }
+        function setMouseOver(index){
+            window.clearInterval(setNextInterval);
+            current=index;
+            setNow(current);
+        }
+    </script>
+</head>
+<body>
+    <div id="picshow">
+       <ul id="pics">
+           <li><a href="#"><img src="img/1.jpg" alt=""></a></li>
+           <li><a href="#"><img src="img/2.jpg" alt=""></a></li>
+           <li><a href="#"><img src="img/3.jpg" alt=""></a></li>
+           <li><a href="#"><img src="img/4.jpg" alt=""></a></li>
+           <li><a href="#"><img src="img/5.jpg" alt=""></a></li>
+           <li><a href="#"><img src="img/6.jpg" alt=""></a></li>
+       </ul>
+       <div id="shuzi">
+           <span class="on" onmouseover="setMouseOver(0)" onmouseout="setNextInterval=window.setInterval('setNext()',3000);">1</span>
+           <span onmouseover="setMouseOver(1)" onmouseout="setNextInterval=window.setInterval('setNext()',3000);">2</span>
+           <span onmouseover="setMouseOver(2)" onmouseout="setNextInterval=window.setInterval('setNext()',3000);">3</span>
+           <span onmouseover="setMouseOver(3)" onmouseout="setNextInterval=window.setInterval('setNext()',3000);">4</span>
+           <span onmouseover="setMouseOver(4)" onmouseout="setNextInterval=window.setInterval('setNext()',3000);">5</span>
+           <span onmouseover="setMouseOver(5)" onmouseout="setNextInterval=window.setInterval('setNext()',3000);">6</span>
+       </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var current=0;
+    var setNextTnterval;
+    var tags=document.getElementById("pics").getElementsByTagName("li");
+    var cats=document.getElementById("shuzi").getElementsByTagName("span");
+    setNextInterval=window.setInterval("setNext()",800);
+</script>
+</html>

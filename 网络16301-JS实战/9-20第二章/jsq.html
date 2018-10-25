@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>计算器</title>
+    <script type="text/javascript">
+         function jia () {
+             m=document.getElementById("a").value;
+             n=document.getElementById("b").value;
+             s=Number(m)+Number(n);
+             alert(s);
+         }
+         function jian() {
+             m=document.getElementById("a").value;
+             n=document.getElementById("b").value;
+             s=Number(m)-Number(n);
+             alert(s);
+         }
+         function cheng () {
+             m=document.getElementById("a").value;
+             n=document.getElementById("b").value;
+             s=Number(m)*Number(n);
+             alert(s);
+         }
+         function chu () {
+             m=document.getElementById("a").value;
+             n=document.getElementById("b").value;
+             s=Number(m)/Number(n);
+             alert(s);
+         }
+    </script>
+</head>
+<body>
+数值A：<input type="text" name="a" id="a"><br><br>
+数值B：<input type="text" name="b" id="b"><br><br>
+<input type="button" name="plus" id="jia" value="加" onclick="jia()">&nbsp;&nbsp;
+<input type="button" name="mints" id="jian" value="减" onclick="jian()">&nbsp;&nbsp;
+<input type="button" name="mut" id="cheng" value="乘" onclick="cheng()">&nbsp;&nbsp;
+<input type="button" name="div" id="chu" value="除" onclick="chu()">
+</body>
+</html>

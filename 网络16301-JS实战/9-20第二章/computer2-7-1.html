@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>简易计算器</title>
+<script type="text/javascript">
+function jia(){
+   m=document.getElementById("a").value;
+   n=document.getElementById("b").value;
+   s=Number(m)+Number(n);
+   //alert(s);
+   document.getElementById("c").value=s;
+}
+function jian(){
+   m=document.getElementById("a").value;
+   n=document.getElementById("b").value;
+   s=Number(m)-Number(n);
+   //alert(s);
+   document.getElementById("c").value=s;
+}
+function chen(){
+   m=document.getElementById("a").value;
+   n=document.getElementById("b").value;
+   s=Number(m)*Number(n);
+   //alert(s);
+   document.getElementById("c").value=s;
+}
+function chu(){
+   m=document.getElementById("a").value;
+   n=document.getElementById("b").value;
+   s=Number(m)/Number(n);
+   //alert(s);
+   document.getElementById("c").value=s;
+}
+</script>
+</head>
+<body>
+<form action="" method="get">
+数值A:<input name="a" type="text" id="a"><br><br>
+数值B:<input name="b" type="text" id="b"><br><br>
+结果为:<input name="b" type="text" id="c"><br><br>
+<input name="plus" value="加" type="button" onclick="jia()">&nbsp;
+<input name="minus" value="减" type="button" onclick="jian()">&nbsp;
+<input name="mut" value="乘" type="button" onclick="chen()">&nbsp;
+<input name="div" value="除" type="button" onclick="chu()">&nbsp;
+</form>
+</body>
+</html>

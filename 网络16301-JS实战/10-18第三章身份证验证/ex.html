@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>身份证号码验证</title>
+
+    <script type="text/javascript">
+    function test(){
+        var idcard=document.getElementById("id").value;
+         if(idcard.length!=15  ||  idcard.length!=18){alert("输入身份证号码有误")}
+
+         if(!((idcard.charAt(idcard.length-1)>=0  &&  idcard.charAt(idcard.length-1<=9 )  ||idcard.charAt(idcard.length-1==X)){alert("最后一位不对")}
+
+
+          //if(!(idcard.charAt(i) >=0  &&  idcard.charAt(i) <=9)){}
+
+          if(idcard.length==18 ){
+           var year=idcard.substring(7,10);
+           var month=idcard.substring(11,12);
+           var date=idcard.substring(13,14);
+          }
+           if(idcard.length==15 ){
+           var year=idcard.substring(6,9);
+           var month=idcard.substring(10,11);
+           var date=idcard.substring(12,13);
+          }
+
+
+          if(!(year>=1900 && year<2018))  {  alert("年份不对")}
+
+          if(month<=0 || month>=13){alert("月份不对")}
+
+          if(month==1 ||  month==3 ||month==5 || month==7 || month==8 || month==10 ||month==12){
+              if(date<1  ||date>31){alert("大月份日期不对")}
+
+          }
+
+          if(month==4  || month==6 || month==9 || month==11){
+              if(date<1 ||date>30){alert("小月份日期不对")}
+
+          }
+
+          if(month=2){
+            if(year==(year%4==0&&year%100==0||year%400!=0)){
+                if(date<1 ||date>29){alert("二月份日期不对")}
+            }
+           if(year!=(year%4==0&&year%100==0||year%400!=0)){
+                if(date<1 ||date>28){alert("二月份日期不对")}
+           }
+
+          }
+
+
+    }
+    </script>
+
+</head>
+<body>
+    请输入身份证号码:<input type="text" id="id">
+    <br>
+    <input type="button" value="验证"  onclick="test()">
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Document</title>
+
+    <script type=text/javascript>
+    function createLi(){
+        var oUl=document.getElementById("ul1");
+        var oTxt=document.getElementById("txt1");
+        var oLi=document.createElement("li");
+        oLi.innerHTML=oTxt.value;
+        oLi.style.background="red";
+
+        var oLis=oUl.getElementsByTagName("li");
+
+        oUl.insertBefore(oLi,oLis[0]);
+
+    }
+
+
+    </script>
+
+</head>
+<body>
+
+<input type="text" id="txt1">
+<input type="button" id="btn1" value="创建li节点" onclick="createLi()">
+<ul id="ul1">
+    <li>111</li>
+</ul>
+
+
+
+<ul id="ul2">
+    <li>111<a href="javascript:;">删除</a></li>
+    <li>222<a href="javascript:;">删除</a></li>
+    <li>333<a href="javascript:;">删除</a></li>
+</ul>
+
+
+<script type="text/javascript">
+window.onload=function(){
+    var oUl2=document.getElementById("ul2");
+    var oA1=document.getElementsByTagName("a");
+
+    for(var i=0;i<oA1.length;i++){
+
+        oA1[i].onclick=function(){
+            oUl2.removeChild(this.parentNode);
+
+
+        }
+
+
+    }
+}
+
+</script>
+</body>
+</html>

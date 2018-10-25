@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>无缝滚动</title>
+    <style type="text/css">
+        #area{
+            width: 800px;
+            height: 108px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            margin: 0px auto;
+        }
+        img{
+            float: left;
+        }
+        #nr{
+            position: relative;
+        }
+        #p1,#p2{
+            width: 800px;
+            position: absolute;
+        }
+        #p1{
+            left: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        <div id="nr">
+            <div id="p1">
+                <img src="images/1.jpg" alt="images/1.jpg">
+                <img src="images/2.jpg" alt="images/2.jpg">
+                <img src="images/3.jpg" alt="images/3.jpg">
+                <img src="images/4.jpg" alt="images/4.jpg">
+            </div>
+            <div id="p2">
+                <img src="images/1.jpg" alt="images/1.jpg">
+                <img src="images/2.jpg" alt="images/2.jpg">
+                <img src="images/3.jpg" alt="images/3.jpg">
+                <img src="images/4.jpg" alt="images/4.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+     window.onload = function(){
+        var p1 = document.getElementById('p1');
+     var p2 = document.getElementById('p2');
+     var x = 0;
+        var fun = function(){
+            p1.style.left = x + 'px';
+            p2.style.left = (x +712) + 'px';
+            x--;
+            if((x +712) == 0){
+                x = 0;
+            }
+        }
+        setInterval(fun,1);
+     }
+</script>
+</html>

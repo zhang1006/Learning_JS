@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>表单验证</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+  function validate(){
+    var name=document.getElementById("userName").value;
+    var pd=document.getElementById("password").value;
+    var pd1=document.getElementById("password1").value;
+    var em=document.getElementById("email").value;
+    //所有的信息不能为空
+    if(name=="" || pd=="" || pd1=="" || em==""){
+      alert("请把内容填写完整!");
+      }
+      //name不能超过16字符，而且只能包括字母、数字、下划线。
+    if(name.length>16){
+      alert("不能超过16个字符!");
+      }
+      //遍历，循环
+    for(var i=0;i<name.length;i++){
+      if( !((name.charAt(i)>="A" && name.charAt(i)<="Z") || (name.charAt(i)>="a" && name.charAt(i)<="z") || (name.charAt(i)>="0" && name.charAt(i)<="9") || name.charAt(i)=="_")){
+        alert("用户名只能有数字、字母、下划线组成!");
+        }
+      }
+    //两次输入的密码必须一致
+    if(pd!=pd1){
+      alert("两次输入的密码必须一致!");
+               }
+    //判断邮箱要包含@符，并且@符不能是第一个字符
+    if(em.indexOf("@")<1){
+      alert("不是一个有效的电子邮箱地址!");
+    }
+  }
+</script>
+
+</head>
+
+<body>
+用户注册:
+<br><br>
+<form action="" method="get" onsubmit="validate()">
+用户名:<input type="text" id="userName">
+<br><br>
+密码:<input type="text" id="password">
+<br><br>
+重复密码:<input type="text" id="password1">
+<br><br>
+邮箱:<input type="text" id="email">
+<br><br>
+<input type="submit" value="注册">
+</form>
+
+</body>
+
+
+</html>

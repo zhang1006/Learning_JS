@@ -1,0 +1,88 @@
+<html>
+<head>
+<title></title>
+<style type="text/css">
+body{
+text-align=:center;
+background:#FFF;
+font-size:12px;
+line-height:24px;
+color:#000;
+}
+#banner{
+width:800px;
+height:206px;
+background:url(img/index.jpg) no-repeat;
+overflow:hidden;
+margin-left:auto;
+margin-right:auto;
+}
+#nav{
+background:url(img/index1.jpg) repeat-x;
+margin-left:auto;
+margin-right:auto;
+height:50px;
+width:800px;
+font-size:14px;
+font-weight:bolder;
+margin-top:-13px;
+}
+#nav li{
+margin-left:10px;
+margin-top:15px;
+float:left;
+width:130px;
+display:inline;
+position:relative;
+}
+a{
+text-decoration:none;
+color:white;
+margin:0px;
+padding:0px;
+}
+#nav li ul{
+position:absolute;
+margin-top:10px;
+margin-left:-20px;
+width:65px;
+display:none;
+background:#0fa5c7;
+}
+#nav li ul li{
+margin:10px 10px 10px -20px;
+}
+</style>
+<script type="text/javascript">
+function test1(obj){
+var sub_ul=obj.getElementsByTagName("ul");
+sub_ul[0].style.display="block";
+}
+function test2(obj){
+var sub_ul=obj.getElementsByTagName("ul");
+sub_ul[0].style.display="none";
+}
+</script>
+</head>
+<body>
+<div id="banner">
+</div>
+<div id="nav">
+<ul>
+<li><a href="#" taget="_self">首页</a></li>
+<li onmouseover="test1(this)" onmouseout="test2(this)">
+<a href="#" taget="_self">公司介绍</a>
+  <ul>
+       <li><a href="#" taget="_self">走进我们</a></li>
+       <li><a href="#" taget="_self">悠久历史</a></li>
+       <li><a href="#" taget="_self">公司理念</a></li>
+       <li><a href="#" taget="_self">经理致词</a></li>
+  </ul>
+</li>
+<li><a href="#" taget="_self">产品展示</a></li>
+<li><a href="#" taget="_self">联系我们</a></li>
+<li><a href="#" taget="_self">招贤纳才</a></li>
+</ul>
+</div>
+</body>
+</html>

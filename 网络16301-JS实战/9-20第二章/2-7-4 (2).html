@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>输出四位数的个位、十位、百位、千位上的数值</title>
+<script type="text/javascript">
+function ge(){
+    m=document.getElementById("a").value;
+    a=Number(m%10);
+    a=parseInt(a);
+    document.getElementById("b").value=a;
+              }
+function shi(){
+    m=document.getElementById("a").value;
+    b=Number(m/10%10);
+    b=parseInt(b);
+    document.getElementById("c").value=b;
+              }
+function bai(){
+    m=document.getElementById("a").value;
+    c=Number(m/100%10);
+    c=parseInt(c);
+    document.getElementById("d").value=c;
+              }
+function qian(){s
+    m=document.getElementById("a").value;
+    d=Number(m/1000%10);
+    d=parseInt(d);
+    document.getElementById("e").value=d;
+              }
+</script>
+</head>
+<body>
+<form action="" method="get">
+请输入一个四位数：<input type="text" name="a"  id="a"><br><br>
+个位数：<input type="text" name="b"  id="b"><br><br>
+十位数：<input type="text" name="c"  id="c"><br><br>
+百位数：<input type="text" name="d"  id="d"><br><br>
+千位数：<input type="text" name="e"  id="e"><br><br>
+<input name="gewei" value="个位" type="button" onclick="ge()">&nbsp;
+<input name="shiwei" value="十位" type="button" onclick="shi()">&nbsp;
+<input name="baiwei" value="百位" type="button" onclick="bai()">&nbsp;
+<input name="qianwei" value="千位" type="button" onclick="qian()">&nbsp;
+</form>
+</body>
+</html>

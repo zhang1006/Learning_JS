@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>无缝滚动</title>
+    <style type="text/css">
+        #gonggao{
+            width: 370px;
+            height: 270px;
+            background: pink;
+            text-align: left;
+            margin: 0px auto;
+            color: #fff;
+        }
+        #gg_nr{
+            width: 330px;
+            height: 200px;
+            margin: 50px 0px 0px 20px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="gonggao">
+        <div id="gg_nr" onmouseover="stop()" onmouseout="go()">
+            <div id="p1">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;五年来，全国各族人民砥砺奋进，无数中国梦实践者脚踏实地书写出一篇篇精彩的中国故事。走进新时代，迈向新征程，开启新篇章，需要汇聚众力，需要撸起袖子加油干的务实打拼，更需要“众人拾柴火焰高”的共识。新时代的实践者，满怀豪情再出发！实干苦干成就梦想，奋勇担当肩头责任，脚踏实地打拼未来、扎扎实实辛勤工作。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;五年来，全国各族人民砥砺奋进，无数中国梦实践者脚踏实地书写出一篇篇精彩的中国故事。走进新时代，迈向新征程，开启新篇章，需要汇聚众力，需要撸起袖子加油干的务实打拼，更需要“众人拾柴火焰高”的共识。新时代的实践者，满怀豪情再出发！实干苦干成就梦想，奋勇担当肩头责任，脚踏实地打拼未来、扎扎实实辛勤工作。</p>
+            </div>
+            <div id="p2">
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        var area = document.getElementById('gg_nr');
+        var p1 = document.getElementById('p1');
+        var p2 = document.getElementById('p2');
+        p2.innerHTML=p1.innerHTML;
+        area.scrollTop=0;
+        function goUp(){
+            area.scrollTop++;
+            if(area.scrollTop>=p1.offsetHeight){
+            area.scrollTop=0;
+        }
+        }
+        var mySet = setInterval(function(){goUp();},50);
+
+        function go(){
+            mySet = setInterval(function(){goUp();},50);
+        }
+        function stop(){
+            clearInterval(mySet);
+        }
+    </script>
+</body>
+</html>

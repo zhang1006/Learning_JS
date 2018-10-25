@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>图片切换</title>
+    <style type="text/css">
+        #picshow {
+            width: 658px;
+            height: 438px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        #picshow ul{
+            width: 658px;
+            height: 438px;
+            overflow: hidden;
+            position: absolute;
+            z-index: 100;
+            left: 0px;
+            top: 0px;
+        }
+        #picshow li{
+            width: 658px;
+            height: 438px;
+            overflow: hidden;
+        }
+        #picshow #shuzi{
+            position: absolute;
+            z-index: 200;
+            left: 0px;
+            bottom: 5px;
+            text-align: right;
+            width: 658px;
+        }
+        #picshow #shuzi span{
+            padding: 2px 5px;
+            border: 1px #f00 solid;
+            color: #f00;
+            background: #fcf;
+            line-height: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        #picshow #shuzi span.on{
+            background: #3cc;
+            border: 1px #06f solid;
+            color: #06f;
+        }
+    </style>
+</head>
+<body>
+    <div id="picshow">
+        <ul id="pics">
+            <li><a href="#"><img src="images/1.jpeg" alt="images/1.jpeg" /></a></li>
+            <li><a href="#"><img src="images/2.jpeg" alt="images/2.jpeg" /></a></li>
+            <li><a href="#"><img src="images/3.jpeg" alt="images/3.jpeg" /></a></li>
+            <li><a href="#"><img src="images/4.jpeg" alt="images/4.jpeg" /></a></li>
+            <li><a href="#"><img src="images/5.jpeg" alt="images/5.jpeg" /></a></li>
+            <li><a href="#"><img src="images/6.jpeg" alt="images/6.jpeg" /></a></li>
+        </ul>
+        <div id="shuzi">
+            <span class="on" onmouseover="setMouseOver(0)" onmouseout="setNextInterval = window.setInterval('setNext()',3000);">1</span>
+            <span onmouseover="setMouseOver(1)" onmouseout="setNextInterval = window.setInterval('setNext()',3000);">2</span>
+            <span onmouseover="setMouseOver(2)" onmouseout="setNextInterval = window.setInterval('setNext()',3000);">3</span>
+            <span onmouseover="setMouseOver(3)" onmouseout="setNextInterval = window.setInterval('setNext()',3000);">4</span>
+            <span onmouseover="setMouseOver(4)" onmouseout="setNextInterval = window.setInterval('setNext()',3000);">5</span>
+            <span onmouseover="setMouseOver(5)" onmouseout="setNextInterval = window.setInterval('setNext()',3000);">6</span>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+     var current = 0;
+     var setNextInterval;
+     var tags = document.getElementById('pics').getElementsByTagName('li');
+     var cats = document.getElementById('shuzi').getElementsByTagName('span');
+     setNextInterval = window.setInterval("setNext()",3000);
+
+     function setNow(index){
+        for (var i = 0 ; i<tags.length ; i++){
+            tags[i].style.display="none";
+        }
+        for (var i = 0 ; i<cats.length ; i++) {
+            cats[i].className="";
+        }
+        tags[index].style.display="block";
+        cats[index].className="on";
+    }
+
+     function setNext(){
+        current++;
+        if(current>tags.length-1){
+            current = 0;
+        }
+        setNow(current);
+     }
+
+     function setMouseOver(index){
+        window.clearInterval(setNextInterval);
+        current = index;
+        setNow(current);
+     }
+</script>
+</html>

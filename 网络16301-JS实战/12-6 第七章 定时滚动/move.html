@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+         body{
+            width:2000px;
+            height:1000px;
+            background:url(img/2.jpg) no-repeat;
+        }
+        #d1{
+            width:500px;
+            height:375px;
+            background:url(img/1.jpeg);
+            position:absolute;
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="向右移动" onclick="start()">
+    <input type="button" value="停止移动" onclick="stop()">
+    <div id="d1"></div>
+    <script type="text/javascript">
+        var timer=null;
+        function start(){
+            var Odiv=document.getElementById("d1");
+            var Odiv1=document.getElementById("d2");
+                //Odiv.style.left=Odiv.offsetLeft+10+"px";
+                //alert("Odiv.style.left:"+Odiv.style.left+"\n Odiv.offsetLeft:" + Odiv.offsetLeft);
+                clearInterval(timer);
+                function a(){
+                    if(Odiv.offsetLeft<800){
+                        Odiv.style.left=Odiv.offsetLeft+10+"px";
+                    }else{
+                        clearInterval(timer);
+                 }
+            }
+                  timer=setInterval(function(){a();},60);
+        }
+        function stop(){
+           clearInterval(timer);
+        }
+ </script>
+</body>
+</html>
