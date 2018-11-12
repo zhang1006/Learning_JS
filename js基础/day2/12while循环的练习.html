@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        //求6的阶乘
+        /* 
+            var ji=1;    //存储最终的阶乘的结果
+            var i=1;    //开始的数字
+            while(i<=6){
+                ji*=i;
+                i++;
+            }
+
+            console.log(ji);  // 720
+         */
+        //求1-100之间所有的偶数的和
+        /*     
+            var sum=0;
+            var i=0;
+            while(i<=100){
+                sum+=i;
+                i+=2;
+            }
+            
+            console.log("1-100之间所有的偶数的和为："+sum);
+         */
+        //求1-100之间所有的奇数的和
+        /*     
+            var sum2=0;
+            var j=1;
+            while(j<=100){
+                sum2+=j;
+                j+=2;
+            }
+
+            console.log("1-100之间所有的奇数的和为："+sum2);
+         */
+        //请输出1-100之间所有能被7整除的数字
+        /*
+            var k=0;
+            while(k<=100){
+                if(k%7==0){
+                    console.log(k)
+                }
+                k++
+            }
+        */
+
+        // 求账户和密码是否一致，登录的效果实现
+        // 提示用户输入账号
+        // 提示用户输入密码
+        // 如果账号和密码不对，则一直提示用户输入账号和密码
+        // 账号--admin
+        // 密码---123---字符串类型
+
+        var userName=prompt("请您输入账号")  //存储账号
+        var userPwd=prompt("请您输入密码")  //存储密码
+        while(userName!="admin"||userPwd!="123"){
+            userName=prompt("请您输入账号");
+            userPwd=prompt("请您输入密码");
+        }
+        console.log("登陆成功");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

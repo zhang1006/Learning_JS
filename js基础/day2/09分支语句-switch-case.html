@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    /* 
+     switch-case语句 ---分支语句----多分支语句
+     
+     switch(表达式){
+         case 值1: 代码1; break;
+         case 值2: 代码2; break;
+         case 值3: 代码3; break;
+         case 值4: 代码4; break;
+         case 值5: 代码5; break;
+         ...多个case
+         default: 代码6;
+     }
+
+     注意问题:
+     default后面的break是可以省略的
+     default也可以省略
+
+     switch-case 语句中和case后面的值比较的是严格模式(===)
+
+
+     执行过程：
+     获取表达式的值,和值1比较，如果一样，则执行代码1,遇到break则跳出整个的语句，后面代码不执行。
+     如果表达式的值和值1不一样，则和值2比较，如果一样，则执行代码2，遇到break，跳出。
+     如果表达式的值和值2不一样，则和值3比较，如果一样，则执行代码3，遇到break，跳出。
+     如果表达式的值和值3不一样，则和值4比较，如果一样，则执行代码4，遇到break，跳出。
+     如果表达式的值和值4不一样，则和值5比较，如果一样，则执行代码5，遇到break，跳出。
+     如果表达式的值和值5不一样，则直接执行代码6。
+
+     */
+    
+    // 例子： 获取一个人的成绩的级别
+    
+    var score=parseInt(prompt("请输入成绩"));
+    switch (parseInt(score/10)){
+        case 9:
+         console.log("A级"); 
+         break;
+        case 8:
+         console.log("B级");
+         break;
+        case 7:
+         console.log("C级"); 
+         break;
+        case 6:
+         console.log("D级"); 
+         break;
+        default: console.log("不及格");
+    }
+    
+    </script>
+</head>
+<body>
+     
+</body>
+</html>

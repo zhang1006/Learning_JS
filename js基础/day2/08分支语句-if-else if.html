@@ -50,22 +50,22 @@
            如果成绩是在60一下，则显示E级
 
      */
-        // var score=parseInt(prompt("请您输入成绩")); //有bug
-        // if(!isNaN(score)){// isNaN(); 如果为true,就说明输入的不是数字,所以前面我们得加上 ! 
-        //     if (score>=90&&score<=100){
-        //         console.log("A级");
-        //     }else if (score>=80){
-        //         console.log("B级");
-        //     }else if (score>=70){
-        //         console.log("C级");
-        //     }else if (score>=60){
-        //         console.log("D级");
-        //     }else{
-        //         console.log("E级");
-        //     }
-        // }else{
-        //     console.log("您输入有误!");
-        // }
+        var score=parseInt(prompt("请您输入成绩")); //有bug
+        if(!isNaN(score)){// isNaN(); 如果为true,就说明输入的不是数字,所以前面我们得加上 ! 
+            if (score>=90&&score<=100){
+                console.log("A级");
+            }else if (score>=80){
+                console.log("B级");
+            }else if (score>=70){
+                console.log("C级");
+            }else if (score>=60){
+                console.log("D级");
+            }else{
+                console.log("E级");
+            }
+        }else{
+            console.log("您输入有误!");
+        }
 
     /* 
     
@@ -74,12 +74,12 @@
             定义变量存储一个年份
     
      */
-        var year=Number(prompt("请输入一个年份"));
-        if (year%100!=0&&year%4==0||year%400==0){
-            console.log("是闰年!");
-        }else{
-            console.log("不是闰年!");
-        }
+        // var year=Number(prompt("请输入一个年份"));
+        // if (year%100!=0&&year%4==0||year%400==0){
+        //     console.log("是闰年!");
+        // }else{
+        //     console.log("不是闰年!");
+        // }
 
     </script>
 </head>
