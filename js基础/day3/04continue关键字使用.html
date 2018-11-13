@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    //continue: 在循环中如果遇到了continue关键字，直接开始一下次循环
+
+    //案例：求100-200之间所有奇数的和(用continue)
+    /*
+    var sum=0;
+    var i=100;
+    while(i<=200){
+        if(i%2==0){
+            i++;
+            continue;
+        }
+        sum+=i;
+        i++;
+    }
+    console.log(sum);
+    */
+
+    //  案例： 求整数1~100的累加值，但要求跳过所有个位数为3的数
+
+    var sum=0;
+    var i=0;
+    while(i<=100){
+        if(i%10==3){
+            i++;
+            continue;
+        }
+        sum+=i;
+        i++;
+    }
+    console.log(sum);
+
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
