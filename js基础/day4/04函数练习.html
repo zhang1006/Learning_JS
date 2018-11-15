@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    //求两个数字的差
+    function getSub(x,y) {
+        return x-y;
+    }
+    console.log(getSub(10,20));
+    
+    //求一组数字中的最大值
+
+    function getArrayMax(array) { 
+        var max=array[0];   //假设是最大值
+        for(var i=0; i<array.length; i++){
+            if(max<array[i]){
+                max=array[i];
+            }
+        }
+        return max;
+    }
+    // var arr=[10,20,30,40,50];
+    // var max=getArrayMax(arr);
+    // console.log(max);
+
+    var max=getArrayMax([10,20,30,40,50]);//可以直接把数组穿到函数中
+    console.log(max);
+    //求一组数字中的最小值
+
+    function getArrayMin(array) {
+        var min=array[0];   //假设是最小值
+        for(var i=0; i<array.length; i++){
+            if(min>array[i]){
+                min=array[i];
+            }
+        }
+        return min;
+    }
+
+    console.log(getArrayMin([10,20,30,40,50,6]));
+
+
+
+
+    //求一组数字的和
+
+    function getArraySum(array) {
+        var sum=0;
+        for(var i=0; i<array.length; i++){
+            sum+=array[i];
+        }
+        return sum;
+    }
+    console.log(getArraySum([10,20,30,40]));
+
+    //求一个数组中的最大值和最小值还有和
+        
+    function getArrayEvery(array) {
+        var min=array[0];   //最小值
+        var max=array[0];   //最大值
+        var sum=0;          //和
+        for(var i=0; i<array.length; i++){
+            sum+=array[i]; //和
+            //最大值
+            if(max<array[i]){
+                max=array[i];
+            } //  end if
+            //最小值
+            if(min>array[i]){
+                min=array[i];
+            }//  end  if
+        } //   end for
+
+        var array=[max,sum,min];
+        return array; 
+    }  
+    var result=getArrayEvery([999,1,300,500,400]);
+    console.log("最大值为："+result[0]);
+    console.log("最小值为："+result[2]);
+    console.log("和为："+result[1]);
+    //通过函数实现数组反转
+
+    function reverseArray(arr) {
+        for(var i=0; i<arr.length/2; i++){
+            var temp=arr[arr.length-1-i];
+            arr[arr.length-1-i]=arr[i];
+            arr[i]=temp;
+        }
+        return arr;
+    }
+    console.log(reverseArray([1,2,3,4,5]));
+
+    //通过函数实现冒泡排序 
+
+    function sortArray(arr) {
+        //控制比较的轮数
+        for(var i=0; i<arr.length; i++){
+            //控制每轮比较的次数
+            for(var j=0; j<arr.length-1; j++){
+                if(arr[j]>arr[j+1]){
+                    var temp=arr[j]; 
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }//  end  if
+            } //  end  for
+        }  //   end  for
+        return arr;
+    }
+    console.log(sortArray([2,5,3,7,6,9,3,4,6,9]));
+
+    //求一个数字的阶乘
+    function getJieCheng(num) {
+        var result=1;
+        for(var i=1; i<=num; i++){
+            result*=i;
+        }
+        return result;
+    }
+    console.log(getJieCheng([5]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
