@@ -70,17 +70,22 @@
     //判断一个数是否是素数
 
     function getSu(x) {
-        var zhishu = true;
-        for(var i=2;i<x/2;i++){
+        for(var i=2;i<x;i++){
             if(x%i===0){
-                zhishu = false;
+                return false;
             }
         }
-        return zhishu;
+        return true;
     }
-    console.log(getSu(parseInt(prompt("请输入一个数字"))));
+    console.log(getSu(parseInt(prompt("请输入一个数字")))?"是质数":"不是质数")
 
 
+    // var result=(getSu(parseInt(prompt("请输入一个数字"))));
+    // if(result){
+    //     console.log("这个数是质数");
+    // }else{
+    //     console.log("这个数不是质数");
+    // }
     
     </script>
 </head>
