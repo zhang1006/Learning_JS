@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+    //求两个数字的和：获取任意两个数字的和
+    function getSum(x,y) {
+        return x+y;
+    }
+
+    //求1-100之间所有数的和
+    function geteverySum() {
+        var sum=0;
+        for(var i=1; i<=100; i++){
+            sum+=i;
+        }
+        return sum;
+    }
+    console.log(geteverySum()); 
+
+    //求1-n之间所有数的和
+    
+    function geteverySum2(n) {
+        var sum=0;
+        for(var i=1; i<=n; i++){
+            sum+=i;
+        }
+        return sum;
+    }
+    console.log(geteverySum2(10));
+    
+    //求n-m之间所有数的和
+
+    function geteverSum3(n,m) {
+        var sum=0;
+        for(var i=n; i<=m; i++){
+            sum+=i;
+        }
+        return sum;
+    }
+    console.log(geteverSum3(1,100));
+
+    //圆的面积
+
+    function getS(r) {
+        return Math.PI*r*r;
+    }
+    console.log(getS(4));
+
+    //求2个数中的最大值
+
+    function getTwoMax(x,y) {
+        return x>y?x:y;
+    }
+
+    console.log(getTwoMax(14,6));
+
+    //求3个数中的最大值
+
+    function getThreeMax(x,y,z) {
+        return x>y?(x>z?x:z):(y>z?y:z);
+    }
+    console.log(getThreeMax(51,22,34));
+
+    //判断一个数是否是素数
+
+    function getSu(x) {
+        var zhishu = true;
+        for(var i=2;i<x/2;i++){
+            if(x%i===0){
+                zhishu = false;
+            }
+        }
+        return zhishu;
+    }
+    console.log(getSu(parseInt(prompt("请输入一个数字"))));
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
