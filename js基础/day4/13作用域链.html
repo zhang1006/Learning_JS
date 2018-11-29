@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    var num=10;
+    function f1() {
+        var num=20;
+        function f2() {
+            var num=30;
+            function f3() {
+                var num=50;
+                console.log("被调用了");
+                console.log(num);
+            }
+            f3();
+        }
+        f2();
+    }
+    f1();
+ 
+    /* 
+    
+     */
+        // function go(x,y,callback){
+
+        //     function to() {
+        //         callback(x+y) 
+        //     };
+        //     to()
+        // };
+    
+        // go(13,23,function (data){
+        //     console.log(data)
+        // });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

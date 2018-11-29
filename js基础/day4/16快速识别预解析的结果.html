@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    // var a = 25;
+    // function abc() {
+    //     alert(a);
+    //     var a = 10;
+    // }
+    // abc();  //undefined   提升函数中变量的声明，不提升赋值
+    // console.log(a);  //25  全局作用域
+
+    // console.log(a);   
+            //输出函数a()的代码    当变量和函数同时提升，变量在最上面  
+    // function a() {
+    //     console.log('aaaaaa');
+    // }
+    // var a = 1;
+    // console.log(a);  //1
+
+    // var a = 18;
+    // f1();
+    // function f1() {
+    //     var b = 9;
+    //     console.log(a);  //undefined
+    //     console.log(b);  //9
+    //     var a = '123';
+    // }
+
+    f1();
+    console.log(c); 
+    console.log(b);
+    console.log(a);
+    function f1() {
+        var a = b = c = 9;
+        console.log(a); //9
+        console.log(b); //9
+        console.log(a); //9
+    }
+    //等于 ↓
+
+    function f1() {
+        var a;
+        a = 9;
+        //隐式全局变量   外面可以访问
+        b = 9; //
+        c = 9; //
+        console.log(a); //9
+        console.log(b); //9
+        console.log(a); //9
+    }
+    f1();
+    console.log(c); //9
+    console.log(b); //9
+    console.log(a); //报错
+
+    </script>
+
+    <script>
+
+    
+    f1();//报错
+    var f1=function () {
+        console.log(a);
+        var a = 10;
+    }
+    //等同于  ↓
+
+    var f1;  
+    f1();  //报错      f1 is not a function
+    f1 = function () {
+        console.log(a);
+        var a = 10;
+    }
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
