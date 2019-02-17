@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+            
+
+    //有一条黄色的小狗，叫大黄，今年已经三岁了，250斤重，每次走路都很慢，喜欢吃大骨头
+    //创建对象
+    var dog = new Object(); 
+    //创建属性
+    dog.name = "大黄";
+    dog.age = 3;
+    dog.color = "黄色";
+    dog.weight = "250斤";
+    //创建方法
+    dog.run = function () {
+        console.log("我每次走路都很慢");
+    };
+    dog.eat = function ( ) {
+        console.log("我喜欢吃大骨头");
+    };
+
+    console.log(dog.name);
+    console.log(dog.age);
+    console.log(dog.weight);
+    console.log(dog.color);
+    dog.run();
+    dog.eat();
+
+    console.log("--------------------------------------------")
+
+    //   创建一个手机对象，手机有型号，有颜色，可以打电话和发短信
+
+    var phone = new Object();
+    phone.size = "小米6";
+    phone.color = "黑色";
+    phone.call = function () {
+        console.log("打电话");
+    };
+    phone.sendMessage = function () {
+        console.log("你在干啥？");
+    };
+
+    phone.call();
+    phone.sendMessage();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

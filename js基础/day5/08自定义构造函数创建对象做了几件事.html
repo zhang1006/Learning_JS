@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        //
+        /* 
+        
+            1.在内存中开辟(申请一块空闲的空间)空间，存储创建新的对象
+            2.把this设置为当前对象
+            3.设置对象的属性和方法的值
+            4.把this这个对象返回    
+        
+        */
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayHi = function () {
+                console.log("我叫:" + this.name + ",年龄:" + this.age);
+            };
+        }
+
+        //创建对象
+        var obj = new Person("小强强", 18);
+        console.log(obj.age);
+        console.log(obj.name);
+        obj.sayHi();
+
+        console.log("------------------------------------")
+        //通过自定义构造函数创建下面的例子
+        //创建一个图片的对象,图片有宽，有高,有大小(4M),图片可以展示内容
+        //创建一个小猫的对象，猫有颜色，体重，年龄，小猫可以抓耗子，可以打架
+
+        //1
+        function NewImg(width, height, size) {
+            this.width = width;
+            this.height = height;
+            this.size = size;
+            this.show = function () {
+                console.log("我是一张美丽的风景照");
+            };
+        }
+        var img = new NewImg(30, 40, "3M");
+        console.log("图片宽度为" + img.width);
+        console.log("图片高度为" + img.height);
+        console.log("图片大小为" + img.size);
+        img.show();
+
+        console.log("------------------------------------")
+        //2
+        function SmallCat(color, weight, age) {
+            this.weight = weight;
+            this.color = color;
+            this.age = age;
+            this.play = function () {
+                console.log("我是一只喜欢欺负狗的猫");
+            };
+        }
+
+        var cat = new SmallCat("黑白相间", "20斤", 5);
+        cat.play();
+        console.log("我很帅，是" + cat.color + "色的，我才" + cat.age + "岁！");
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

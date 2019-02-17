@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+
+        //var obj = new Object();
+        //var obj2 = new 自定义构造函数();
+
+        //3 字面量的方式创建对象
+        var obj = {};  //空对象
+        //添加属性
+        obj.name = "小白";
+        obj.age = 10;
+        obj.sayHi = function () {
+            console.log("我是：" + this.name);
+        };
+        obj.sayHi();
+
+        //优化后的写法：
+
+        var obj2 = {
+            name: "小明",
+            age: 20,
+            sayHi: function () {
+                console.log("我是：" + this.name);
+            },
+            eat: function () {
+                console.log("吃了");
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
