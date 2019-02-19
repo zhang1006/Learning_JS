@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+        // var dt =new Date();
+        
+        // //获取年份
+        // console.log(dt.getFullYear());
+        // //获取月份
+        // console.log(dt.getMonth()+1);// 国外日期 0-11  需要+1
+        // //获取日期
+        // console.log(dt.getDate());  
+        // //获取小时
+        // console.log(dt.getHours());
+        // //获取分钟
+        // console.log(dt.getMinutes());
+        // //获取秒
+        // console.log(dt.getSeconds());
+        // //获取星期
+        // console.log(dt.getDay());  //星期从0开始
+
+
+        var dt=new Date();
+
+        console.log(dt.toDateString());   //英文格式---日期
+        console.log(dt.toLocaleDateString());  //数字格式---日期
+
+        console.log(dt.toTimeString());   //英文格式---时间
+        console.log(dt.toLocaleTimeString());  //数字格式---时间
+
+        console.log(dt.valueOf());  //毫秒值
+        
+        // console.log(dt);
+        // //转为字符串    
+        // console.log(dt.toString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
