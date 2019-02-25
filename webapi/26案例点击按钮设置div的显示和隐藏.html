@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+                width: 220px;
+                height: 120px;
+                background-color: #256322;
+                border: 10px solid red
+        }
+        .cls{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="隐藏" id="btn" />
+    <div id="dv"></div>
+
+    <script>
+    function my$(id) {
+        return document.getElementById(id);
+    };
+
+    //点击按钮，通过类样式的方式设置div的显示和隐藏
+    my$("btn").onclick=function(){
+            //判断div是否使用了类样式 
+            if(my$("dv").className!="cls"){
+                //现在是显示的,应该隐藏
+                my$("dv").className="cls";
+                this.value="显示";
+            }else{
+                //现在是隐藏的,应该显示
+                my$("dv").className=" ";//显示
+                this.value="隐藏";
+            }
+        };
+
+    </script>
+</body>
+</html>

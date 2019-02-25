@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="button" value="最终版" id="btn" />
+    <script>
+        //先有按钮,才能获取,获取之后才能注册事件
+
+        //根据id属性的值从文档中获取这个元素,
+    var btnObj=document.getElementById("btn");
+    //为当前的这个按钮对象(元素),注册点击事件,添加事件处理函数
+    btnObj.onclick =function(){
+        alert("OMG,真的完全分离了呐！");
+    };
+    </script>
+</body>
+</html>

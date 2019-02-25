@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div{
+            width: 220px;
+            height: 120px;
+            background-color: #256322;
+        } */
+    </style>
+</head> 
+<body>
+    <input type="button" value="设置样式" id="btn">
+    <div id="dv"></div>
+    <script>
+    function my$(id) {
+        return document.getElementById(id);
+    }
+
+    //凡是css中的这个属性是多个单词的写法,在js代码中DOM操作的时候.把-干掉,后面的单词的首字母大写即可
+    my$("btn").onclick=function() {
+        my$("dv").style.width="400px";
+        my$("dv").style.height="300px";
+        my$("dv").style.backgroundColor="hotpink";
+    };
+    </script>
+</body>
+</html>

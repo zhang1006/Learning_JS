@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="没怀孕" >
+    <input type="button" value="没怀孕" >
+    <input type="button" value="没怀孕" >
+    <input type="button" value="没怀孕" >
+    <input type="button" value="没怀孕" >
+    <input type="button" value="没怀孕" >
+    <script>
+        //获取所有的按钮,分别注册点击事件
+        var btnObj=document.getElementsByTagName("input");
+        //循环遍历所有的按钮
+        for(var i=0; i<btnObj.length; i++){
+            //为所有的按钮添加点击事件
+            btnObj[i].onclick=function(){
+                //把所有的value值设置为默认值: 没怀孕
+                for(var j=0; j<btnObj.length; j++){
+                    btnObj[j].value="没怀孕";
+                };
+                //当前被点击事件的按钮设置为: 怀孕了
+                this.value="怀孕了";
+            };
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    //点击操作:------>事件:就是一件事,有触发和响应,事件源。
+    //按钮被点击了,弹出对话框
+    //按钮----->事件源
+    //点击----->事件名字
+    //被点了--->触发了
+    //弹框了---->响应
+    </script>
+</head>
+<body>
+    <!-- 第一个版本 -->
+    <!-- html代码,点击按钮弹出对话框,对话框:alert()----- >js的代码 -->
+    <!-- html代码中嵌入了js的代码,不方便后期的修改和维护 -->
+    <input type="button" value="版本1：显示效果" onclick="alert('啊哦,我被点击了')"  />
+
+    <!-- 最终的效果：应该把js代码和html代码分离 -->
+
+    
+    <!-- 第二个版本： js代码很多,但是没有分离html和js该怎么做 -->
+    <script>
+        function f1() {
+            //函数可以写很多行代码
+            alert("这是一个对话框")
+        }
+    </script>
+    <input type="button" value="版本2：显示效果" onclick="f1()" />
+
+    <!-- 开始分离html和js -->
+    <input type="button" value="开始分离代码" id="btn" />
+    <script>
+    function f2() {
+        alert("开发分离html和js代码");
+    }
+    //html标签中的id属性是唯一的，
+    //id属性就像人的身份证号一样,不能重复,页面中的唯一标识
+
+    var btnObj=document.getElementById("btn");
+    //为按钮注册点击事件    
+    btnObj.onclick=f2;  //不能加括号
+
+    </script>
+
+    <!-- 最终的版本代码 -->
+    <input type="button" value="最终版" id="btn1" />
+    <script>
+        var btnObj1=document.getElementById("btn1");
+        btnObj1.onclick=function() {
+            alert("哦，这真是太好了！");
+        }
+
+    </script>
+
+</body>
+</html>
