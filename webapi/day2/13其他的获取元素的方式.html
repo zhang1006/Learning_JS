@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cls {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="更改样式" id="btn" />
+    <p class="cls">这是一个p</p>
+    <p>这是另一个p</p>
+    <span class="cls">这是第一个span</span><br>
+    <span>这是另一个span</span>
+    <div class="cls">这是第一个div</div>
+    <div>这是第二个div</div>
+
+    <script src="script.js"></script>
+    <script>
+
+        //点击按钮弹出对话框
+        // var btnObj = document.querySelector("#btn");
+        // btnObj.onclick = function () {
+        //     alert("哈哈,我被点击了");
+        // };
+
+        var objs=document.querySelectorAll(".cls");
+        for(var i=0; i<objs.length; i++){
+            objs[i].style.backgroundColor="green";
+        }
+
+    </script>
+
+</body>
+
+</html>
