@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="变色" id="btn">
+    <ul id="uu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+
+    <script src="script.js"></script>
+    <script>
+        //隔行变色----节点
+        my$("btn").onclick = function () {
+            var count = 0; //记录有多少个li
+            //获取ul中所有的子节点
+            var nodes = my$("uu").childNodes;
+            //循环遍历
+            for (var i = 0; i < nodes.length; i++) {
+                //判断这个节点是不是li标签
+                if (nodes[i].nodeType == 1 && nodes[i].nodeName == "LI") {
+                    nodes[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+                    count++;
+                }
+            }
+        };
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="uu">
+        <li>第1个</li>
+        <li>第2个</li>
+        <li id="aa">第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+    </ul>   
+    
+    <script src="script.js"></script>
+    <script>
+    //第一个节点和第一个元素的获取的代码在IE8中可能不支持
+    
+    //element.firstChild--->谷歌和火狐获取的是第一个子节点
+    //element.firstChild--->IE8获得的是第一个子元素
+    //element.firstElementChild---->谷歌和火狐是第一个子元素,IE8不支持
+        //获取任意一个父级元素的第一个子级元素
+        function getFirstElmentChild(element){
+            if(element.firstElementChild){//true
+                return element.firstElementChild;
+            }else{
+                var node=element.firstChild; //第一个子节点
+                while (node&&node.nodeType!=1){
+                    node=node.nextSibling;
+                }
+                return node;
+            }
+        }
+        //获取任意一个父级元素的最后一个子级元素
+        function getLastElmentChild(element){
+            if(element.lastElementChild){//true
+                return element.lastElementChild;
+            }else{
+                var node=element.lastChild; //第一个子节点
+                while (node&&node.nodeType!=1){
+                    node=node.previousSibling;
+                }
+                return node;
+            }
+        }
+        //获取任意一个元素的前一个兄弟元素
+        function getPreviousElementSibling(element){
+            if(element.previousElementSibling){//true
+                return element.previousElementSibling;
+            }else{
+                var node=element.previousSibling; //第一个子节点
+                while (node&&node.nodeType!=1){
+                    node=node.nextSibling;
+                }
+                return node;
+            }
+        }
+        //获取任意一个元素的后一个兄弟元素
+        function getNextElementSibling(element){
+            if(element.nextElementSibling){//true
+                return element.nextElementSibling;
+            }else{
+                var node=element.nextsSibling; //第一个子节点
+                while (node&&node.nodeType!=1){
+                    node=node.previousSibling;
+                }
+                return node;
+            }
+        }
+
+        //测试
+        console.log(getFirstElmentChild(my$("uu")).innerText);
+        console.log(getLastElmentChild(my$("uu")).innerText);
+        console.log(getPreviousElementSibling(my$("aa")).innerText);
+        console.log(getNextElementSibling(my$("aa")).innerText);
+    //最后一个节点和最后一个元素的获取的代码在IE8中可能不支持
+    //前一个节点和前一个元素的获取的代码在IE8中可能不支持
+    //后一个节点和后一个元素的获取的代码在IE8中可能不支持
+
+    //学习节点操作还是为了操作元素
+
+    </script>
+</body>
+</html>

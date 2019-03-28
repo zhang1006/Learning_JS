@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 400px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建表格" id="btn1">
+    <input type="button" value="删除表格" id="btn2">
+    <input type="button" value="删除全部表格" id="btn3">
+    <div id="dv"></div>
+
+    <script src="script.js"></script>
+    <script>
+        
+        var i=0;
+        my$("btn1").onclick=function() {
+            i++;
+            var btnObj=document.createElement("input");
+            btnObj.type="button";
+            btnObj.value="脑阔痛"+i;
+            // my$("dv").appendChild(btnObj);
+            //倒序输出
+            my$("dv").insertBefore(btnObj,my$("dv").firstElementChild);
+            
+        };
+        my$("btn2").onclick=function(){
+            //移除父级元素中的一个子级元素
+            my$("dv").removeChild(my$("dv").firstElementChild);
+        };
+        my$("btn3").onclick=function(){
+            //点击按钮删除div中的所有子级元素
+            //判断父级元素中有没有第一个子元素
+            while(my$("dv").firstElementChild){
+                my$("dv").removeChild(my$("dv").firstElementChild);
+            }
+        }; 
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+
+    <script src="script.js"></script>
+    <script>
+    
+    //为任意元素.绑定任意的事件,任意的元素,事件的类型,事件处理函数
+        function addEventListener(element,type,fn){
+            //判断浏览器是否支持这个方法
+            if(element.addEventListener){
+                element.addEventListener(type,fn,false);
+            }else if(element.attachEvent){
+                element.attachEvent("on"+type,fn);
+            }else{
+                element["on"+type]=fn;
+            }
+        }
+    </script>
+</body>
+</html>
