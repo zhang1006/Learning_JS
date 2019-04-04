@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        //页面加载的时候,按钮还没出现,页面没有加载完毕
+
+        //页面加载完毕了,在获取按钮
+        //只要页面加载完毕,这个事件就会触发----页面中所有的内容,标签,属性,文本,包括外部引入的js文件
+
+        //很重要-----页面加载完毕
+        // window.onload=function() {
+        //     document.getElementById("btn").onclick=function() {
+        //         alert("页面加载成功");
+        //     };
+        // };
+        
+        //扩展的事件---页面关闭之后才触发的事件
+        // window.onunload=function() {
+        //     alert("哈哈");
+        // };
+        //扩展的事件---页面关闭之前才触发的事件
+        // window.onunload=function() {
+        //     alert("耶耶耶耶耶");
+        // };
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="哈哈" id="btn">
+</body>
+</html>

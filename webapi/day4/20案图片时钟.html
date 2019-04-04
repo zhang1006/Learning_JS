@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <img src="time/00_00.jpg" alt="" id="im">
+    <script src="script.js"></script>
+    <script>
+        function f1(){
+            //获取当前时间
+            var dt =new Date();
+            //获取小时
+            var hour = dt.getHours();
+            //获取分钟 sss
+
+            //获取秒
+            var second=dt.getSeconds();
+            hour=hour<10?"0"+hour:hour;
+            second=second<10?"0"+second:second;
+            //console.log(hour+"==="+second);
+
+            my$  ("im").src="time/"+hour+"_"+second+".jpg";
+            }
+            f1();
+            //页面加载完毕后,过了1秒再执行函数的代码
+        setInterval(f1,1000);
+    </script>
+</body>
+</html>

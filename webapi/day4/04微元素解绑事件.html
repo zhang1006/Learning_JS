@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <input type="button" value="执行" id="btn">
+    <input type="button" value="解绑" id="btn2">
+    <script src="script.js"></script>
+    <script>
+        //1  对象.on事件名字=事件处理函数-----绑定事件
+        // my$("btn").onclick=function(){
+        //     console.log("执行了！！！");
+        // };
+        // my$("btn2").onclick=function(){
+        //     //1.解绑事件
+        //     my$("btn").onclick=null;
+        // };
+
+        //2.对象.addEventListener("没有on的事件类型",命名函数,false);-----绑定事件  
+        // my$("btn").addEventListener("click", function () {
+        //     console.log("我是第1个");
+        // }, false);
+        // my$("btn").addEventListener("click", function () {
+        //     console.log("我是第2个");
+        // }, false);
+
+        // my$("btn2").onclick = function () {
+        //     //解绑事件的时候，需要在绑定事件的时候，使用命名函数
+        //     my$("btn").removeEventListener("click", function () {
+        //         console.log("我是第1个");
+        //     }, false);
+        // };
+        //     失败↑
+
+        // function f1() {
+        //     console.log("我是第一个");
+        // }
+        // function f2() {
+        //     console.log("我是第一个");
+        // }
+        // my$("btn").addEventListener("click",f1, false);
+        // my$("btn").addEventListener("click",f2, false);
+
+        // my$("btn2").onclick = function () {
+        //     //解绑事件的时候，需要在绑定事件的时候，使用命名函数
+        //     my$("btn").removeEventListener("click",f1, false);
+        // };
+        //     成功↑
+
+        //3.对象.attachEvent("on事件类型",命名函数);----绑定事件
+        // function f1() {
+        //     console.log("我是第一个");
+        // }
+        // function f2() {
+        //     console.log("我是第一个");
+        // }
+        // my$("btn").attachEvent("onclick",f1);
+        // my$("btn").attachEvent("onclick",f2);
+
+        // my$("btn2").onclick = function () {
+        //     my$("btn").deachEvent("click",f1);
+        // };
+
+
+
+
+        //解绑事件：
+        /*
+            注意：用什么方式绑定事件，就应该用对应的方式解绑事件!!!
+            1.解绑事件
+            对象.on事件名字=事件处理函数--->绑定事件
+            对象.on时间名字=null;
+
+            2.解绑事件
+            对象.addEventListener("没有on的事件类型",命名函数,false);-----绑定事件
+            对象.removeEventListener("没有on的事件类型",函数名字,false);
+
+            3.解绑事件
+            对象.attachEvent("on事件类型",命名函数);----绑定事件
+            对象.detachEvent("on事件类型",函数名字);
+         */
+
+    </script>
+</body>
+
+</html>

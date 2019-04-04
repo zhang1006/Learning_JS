@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    
+    <script>
+    
+            //BOM中有两个定时器-----计时器
+        
+            //定时器
+            //参数1:参数
+            //参数2:时间---毫秒---1000毫秒---1秒
+            //执行过程:页面加载完毕后,过了1秒,执行一次函数的代码,又过了1秒再执行函数....
+            
+            var timeId=setInterval(function(){
+                alert("哎呀呀！又过了两秒"); 
+            },2000);
+            document.getElementById("btn").onclick=function(){
+                window.clearInterval(timeId);
+            };
+            </script>
+</body>
+</html>
