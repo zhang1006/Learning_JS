@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="texta" id="" cols="30" rows="10">
+        这个世界就是这么疯狂,你不同意,我就不让你注册，我,秦始皇,打钱
+    </textarea><br>
+    <input type="button" value="请仔细阅读协议(5)" id="btn" disabled="disabled">
+    <script src="script.js"></script>
+    <script>
+        
+        var time=5;        
+        var timeId=setInterval(function(){
+            time--;
+            my$("btn").value="请仔细阅读协议("+time+")";
+            if(time<=0){
+                //停止定时器
+                clearInterval(timeId);
+                //按钮可以被点击了
+                my$("btn").value="同意";
+                my$("btn").disabled=false;
+            }
+        },1000);
+
+    </script>
+</body>
+</html>

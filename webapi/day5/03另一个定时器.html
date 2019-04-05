@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <script>
+    
+    //常用的,反复的执行
+    // window.setInterval(function(){
+    //     alert("哈哈！");
+    // },1000);
+
+    // window.clearInterval(定时器id);//清理定时器
+
+    //另一个定时器---------一次性的定时器
+
+    //页面加载后执行
+    window.onload=function() {
+        //一次性的定时器
+        var timeId=setTimeout(function(){
+            alert("我是一个弹框");
+        },1000)
+        
+        //点击这个按钮,停止这个一次性的定时器
+        //目的是为了清除这个一次性的定时器在内存中占用的空间
+        document.getElementById("btn").onclick=function() {
+            window.clearTimeout(timeId);
+        };
+    };
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+</body>
+</html>
