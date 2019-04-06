@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    .main {
+      margin: 0 auto;
+      width: 1000px;
+      margin-top: 10px;
+
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top" id="topPart">
+    <img src="images/top.png" alt="" />
+  </div>
+  <div class="nav" id="navBar">
+    <img src="images/nav.png" alt="" />
+  </div>
+  <div class="main" id="mainPart">
+    <img src="images/main.png" alt="" />
+  </div>
+  <script src="script.js"></script>
+
+  <script>
+    //获取浏览器向上卷曲出去的距离的值,向左卷曲出去的距离
+    // function getScroll() {
+    //   var obj = {};
+    //   var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    //   var left = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+    //   obj.left = left;
+    //   obj.top = top;
+    //   return obj
+    // }
+
+    // function getScroll() {
+    //   var obj = {};
+    //   obj.top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    //   obj.left = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+
+    //   return obj
+
+    // function getScroll() {
+    //   var obj = {
+    //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+    //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+    //   };
+
+    //   return obj
+    // }
+      //最终简化版本
+    function getScroll() {
+      return {
+        top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+        left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+      };
+    }
+    // 测试
+    window.onscroll=function() {
+      console.log(getScroll().top);
+    }
+  </script>
+</body>
+
+</html>
