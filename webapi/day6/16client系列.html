@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 210px;
+            border: 20px solid red;
+            border-left-width: 40px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+    <script>
+
+    /* 
+    
+        offset系列:获取元素的宽,高,left,top,offsetParent
+        offsetWidth: 元素的宽,有边框
+        offsetHeight: 元素的高,有边框
+        offsetLeft: 元素(包括边框)距离左边距离的值
+        offsetTop: 元素(包括边框)距离上面位置的值---
+
+        scroll系列: 卷曲出去的值
+        scrollWidth:元素中内容的实际的宽(如果内容很少或者没有内容,那么就是元素自身的宽),没有边框
+        scrollHeight:元素中内容的实际的高(如果内容很少或者没有内容,那么就是元素自身的高),没有边框
+        scrollLeft: 元素中向左卷曲出去的距离
+        scrollTop: 元素中向上卷曲出去的距离
+
+        client系列:可视区域
+        clientWidth:可视区域的宽(不算边框),边框内容的宽度
+        clientHeight: 可视区域的高(不算边框)
+        clientLeft: 元素内容左侧边框的宽度
+        clientTop: 元素内容上方边框的高度
+
+    */
+    </script>
+</head>
+
+<body>
+    <div id="dv"></div>    
+    <script src="script.js"></script>
+    <script>
+        console.log("offsetWidth:"+my$("dv").offsetWidth);
+        console.log("clientWidth:"+my$("dv").clientWidth);
+        console.log("offsetLeft:"+my$("dv").offsetLeft);
+        console.log("clientLeft:"+my$("dv").clientLeft);
+        console.log("offsetTop:"+my$("dv").offsetTop);
+        console.log("clientTop:"+my$("dv").clientTop);
+        // console.log(my$("dv").clientHeight);
+
+        // console.log(my$("dv").clientLeft);
+
+    </script>
+
+</body>
+
+</html>

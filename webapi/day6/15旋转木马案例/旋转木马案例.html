@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
   <meta charset="UTF-8">
   <title>旋转木马轮播图</title>
-  <link rel="stylesheet" href="css/css.css"/>
+  <link rel="stylesheet" href="css/css(1).css" />
   <script src="common.js"></script>
   <script>
     //
@@ -46,66 +47,68 @@
 
     ];
 
-    //页面加载的事件
+    //页面加载完毕
     window.onload = function () {
-      var flag=true;//假设所有的动画执行完毕了---锁====================================================
+      //1---图片散开_获取每个li 标签
+      var flag = true;
       var list = my$("slide").getElementsByTagName("li");
-      //1---图片散开
       function assign() {
         for (var i = 0; i < list.length; i++) {
-          //设置每个li,都要把宽,层级,透明度,left,top到达指定的目标位置
-          animate(list[i], config[i],function () {
-            flag=true;//===============================================
+          animate(list[i], config[i], function () {
+            flag = true;
           });
         }
       }
       assign();
-      //右边按钮
-      my$("arrRight").onclick = function () {
-        if(flag){//==========================================================
-          flag=false;
-          config.push(config.shift());
-          assign();//重新分配
-        }
 
-      };
-      //左边按钮
-      my$("arrLeft").onclick = function () {
-        if(flag){//==================================================
-          flag=false;
+      //右边焦点按钮
+      my$("arrRight").onclick = function () {
+        if (flag) {
+          flag = false;
           config.unshift(config.pop());
           assign();
         }
-
-      };
-      //鼠标进入,左右焦点的div显示
+      }
+      //左边焦点按钮
+      my$("arrLeft").onclick = function () {
+        if (flag) {
+          flag = false;
+          config.push(config.shift());
+          assign();
+        }
+      }
+      // 鼠标进入事件,左右焦点的div显示
       my$("slide").onmouseover = function () {
-        animate(my$("arrow"), {"opacity": 1});
+        animate(my$("arrow"), { "opacity": 1 });
       };
-      //鼠标离开,左右焦点的div隐藏
+      // 鼠标离开事件
       my$("slide").onmouseout = function () {
-        animate(my$("arrow"), {"opacity": 0});
+        animate(my$("arrow"), { "opacity": 0 });
       };
+
     };
+
   </script>
 
 </head>
+
 <body>
-<div class="wrap" id="wrap">
-  <div class="slide" id="slide">
-    <ul>
-      <li><a href="#"><img src="images/slidepic1.jpg" alt=""/></a></li>
-      <li><a href="#"><img src="images/slidepic2.jpg" alt=""/></a></li>
-      <li><a href="#"><img src="images/slidepic3.jpg" alt=""/></a></li>
-      <li><a href="#"><img src="images/slidepic4.jpg" alt=""/></a></li>
-      <li><a href="#"><img src="images/slidepic5.jpg" alt=""/></a></li>
-    </ul>
-    <div class="arrow" id="arrow">
-      <a href="javascript:;" class="prev" id="arrLeft"></a>
-      <a href="javascript:;" class="next" id="arrRight"></a>
+  <div class="wrap" id="wrap">
+    <div class="slide" id="slide">
+      <ul>
+        <li><a href="#"><img src="images/slidepic1.jpg" alt="" /></a></li>
+        <li><a href="#"><img src="images/slidepic2.jpg" alt="" /></a></li>
+        <li><a href="#"><img src="images/slidepic3.jpg" alt="" /></a></li>
+        <li><a href="#"><img src="images/slidepic4.jpg" alt="" /></a></li>
+        <li><a href="#"> <img src="images/slidepic5.jpg" alt="" /></a></li>
+      </ul>
+      <div class="arrow" id="arrow">
+        <a href="javascript:;" class="prev" id="arrLeft"></a>
+        <a href="javascript:;" class="next" id="arrRight"></a>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
+
 </html>
